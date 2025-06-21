@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            background-color: #f4f6f9;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100vh;
+            background-color: #2c3e50;
+            color: white;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            overflow-y: auto;
+        }
+
+        .sidebar .section-title {
+            margin-top: 20px;
+            padding-left: 20px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .sidebar a {
+            padding: 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #ecf0f1;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s;
+        }
+
+        .sidebar a i {
+            margin-right: 10px;
+        }
+
+        .sidebar a:hover {
+            background: #34495e;
+            color: #ffffff;
+        }
+
+        .content {
+            margin-left: 260px;
+            padding: 20px;
+            transition: all 0.3s;
+        }
+
+        .collapsed {
+            width: 80px;
+        }
+
+        .collapsed a {
+            justify-content: center;
+        }
+
+        .collapsed a span {
+            display: none;
+        }
+
+        .collapsed + .content {
+            margin-left: 90px;
+        }
+
+        .navbar {
+            background: #34495e;
+        }
+
+        .navbar h4 {
+            color: #ecf0f1;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 80px;
+            }
+
+            .sidebar a {
+                font-size: 14px;
+                padding: 10px;
+                justify-content: center;
+            }
+
+            .sidebar a span {
+                display: none;
+            }
+
+            .content {
+                margin-left: 90px;
+            }
+        }
+
+        .card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-body i {
+            font-size: 3rem;
+        }
+
+        .card.bg-primary {
+            background-color: #3498db;
+        }
+
+        .card.bg-info {
+            background-color: #1abc9c;
+        }
+
+        .card.bg-success {
+            background-color: #2ecc71;
+        }
+
+        .card.bg-danger {
+            background-color: #e74c3c;
+        }
+
+        .badge.bg-danger {
+            background-color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <div class="d-flex">
+        <div class="sidebar" id="sidebar">
+            <h4 class="text-white text-center">SM System</h4>
+        
+            <a href="#"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a>
+        
+            <div class="section-title">
+                <span class="text-white">User Management</span>
+            </div>
+            <a href="#"><i class="fas fa-users"></i> <span>Manage Users</span></a>
+            <a href="#"><i class="fas fa-user-tag"></i> <span>Set User Permissions</span></a>
+            <a href="#"><i class="fas fa-history"></i> <span>User Activity Logs</span></a>
+            <a href="#"><i class="fas fa-bell"></i> <span>Telegram Notifications</span></a>
+        
+            <div class="section-title">
+                <span class="text-white">Staff Management</span>
+            </div>
+            <a href="#"><i class="fas fa-user-cog"></i> <span>Manage Staff</span></a>
+            <a href="#"><i class="fas fa-id-card"></i> <span>Staff Profiles</span></a>
+            <a href="#"><i class="fas fa-qrcode"></i> <span>QR Attendance</span></a>
+            <a href="#"><i class="fas fa-birthday-cake"></i> <span>Birthday Notifications</span></a>
+            <a href="#"><i class="fas fa-clipboard-check"></i> <span>Generate Reports</span></a>
+        
+            <div class="section-title">
+                <span class="text-white">Curriculum Management</span>
+            </div>
+            <a href="#"><i class="fas fa-graduation-cap"></i> <span>Manage Classes</span></a>
+            <a href="#"><i class="fas fa-book-open"></i> <span>Set Subjects</span></a>
+            <a href="#"><i class="fas fa-calendar-alt"></i> <span>Class Schedules</span></a>
+            <a href="#"><i class="fas fa-cogs"></i> <span>Set Fees</span></a>
+        
+            <div class="section-title">
+                <span class="text-white">Score System</span>
+            </div>
+            <a href="#"><i class="fas fa-chart-line"></i> <span>Track Scores</span></a>
+            <a href="#"><i class="fas fa-table"></i> <span>Score Tables</span></a>
+            <a href="#"><i class="fas fa-excel"></i> <span>Export Scores to Excel</span></a>
+            <a href="#"><i class="fas fa-cogs"></i> <span>Score Settings</span></a>
+        
+            <div class="section-title">
+                <span class="text-white">Student Management</span>
+            </div>
+            <a href="#"><i class="fas fa-user-graduate"></i> <span>Student Profiles</span></a>
+            <a href="#"><i class="fas fa-check-circle"></i> <span>Student Payment Status</span></a>
+            <a href="#"><i class="fas fa-calendar-check"></i> <span>Payment Reminders</span></a>
+            <a href="#"><i class="fas fa-users"></i> <span>Batch Management</span></a>
+        
+            <div class="section-title">
+                <span class="text-white">Inventory Management</span>
+            </div>
+            <a href="#"><i class="fas fa-cogs"></i> <span>Manage Stock</span></a>
+            <a href="#"><i class="fas fa-box"></i> <span>Products List</span></a>
+            <a href="#"><i class="fas fa-clipboard-list"></i> <span>Inventory Reports</span></a>
+            <a href="#"><i class="fas fa-tags"></i> <span>Product Barcode</span></a>
+        
+            <div class="section-title">
+                <span class="text-white">Reports</span>
+            </div>
+            <a href="#"><i class="fas fa-file-alt"></i> <span>Generate Reports</span></a>
+            <a href="#"><i class="fas fa-download"></i> <span>Download Reports</span></a>
+        
+            <div class="section-title">
+                <span class="text-white">System Settings</span>
+            </div>
+            <a href="#"><i class="fas fa-cogs"></i> <span>General Settings</span></a>
+            <a href="#"><i class="fas fa-lock"></i> <span>Security Settings</span></a>
+            <a href="#"><i class="fas fa-users-cog"></i> <span>Role Management</span></a>
+            <a href="#"><i class="fas fa-database"></i> <span>Backup & Restore</span></a>
+        
+            <hr>
+            <a href="#"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a>
+        </div>
+        
+        <div class="content flex-grow-1">
+            <nav class="navbar navbar-expand-lg shadow-sm p-3">
+                <div class="container-fluid d-flex justify-content-between">
+                    <button class="btn btn-outline-light" id="toggleSidebar">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h4 class="m-0">Dashboard</h4>
+                    <div class="d-flex align-items-center">
+                        <button class="btn btn-outline-light me-3">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge bg-danger">3</span>
+                        </button>
+                        <div class="dropdown">
+                            <button class="btn btn-outline-light" id="profileBtn" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-user"></i> <span class="d-none d-lg-inline">User</span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="profileBtn">
+                                <li><a class="dropdown-item" href="#">My Profile</a></li>
+                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                <li><a class="dropdown-item" href="#">Log Out</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container mt-4">
+                <div class="row g-3">
+                    <!-- Total Students Card -->
+                    <div class="col-md-3 col-sm-6">
+                        <div class="card text-white bg-primary">
+                            <div class="card-body">
+                                <i class="fas fa-users"></i>
+                                <h5 class="card-title">Total Students</h5>
+                                <p class="card-text">1200</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Total Staff Card -->
+                    <div class="col-md-3 col-sm-6">
+                        <div class="card text-white bg-info">
+                            <div class="card-body">
+                                <i class="fas fa-chalkboard-teacher"></i>
+                                <h5 class="card-title">Total Staff</h5>
+                                <p class="card-text">45</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Total Classes Card -->
+                    <div class="col-md-3 col-sm-6">
+                        <div class="card text-white bg-success">
+                            <div class="card-body">
+                                <i class="fas fa-school"></i>
+                                <h5 class="card-title">Total Classes</h5>
+                                <p class="card-text">30</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Notifications Card -->
+                    <div class="col-md-3 col-sm-6">
+                        <div class="card text-white bg-danger">
+                            <div class="card-body">
+                                <i class="fas fa-bell"></i>
+                                <h5 class="card-title">Notifications</h5>
+                                <p class="card-text">5 new</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('toggleSidebar').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('collapsed');
+        });
+    </script>
+</body>
+</html>
