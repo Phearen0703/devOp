@@ -89,21 +89,77 @@
 </head>
 <body>
   <div class="d-flex">
-    <div class="sidebar" id="sidebar">
-      <h4 class="text-white text-center">SM System</h4>
-
-      <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a>
-
-      <div class="section-title">
-        <span class="text-white">User Management</span>
-      </div>
-      <a href="users.html" class="active"><i class="fas fa-users"></i> <span>Manage Users</span></a>
-      <a href="#"><i class="fas fa-user-tag"></i> <span>Set User Permissions</span></a>
-      <a href="#"><i class="fas fa-history"></i> <span>User Activity Logs</span></a>
-      <a href="#"><i class="fas fa-bell"></i> <span>Telegram Notifications</span></a>
-
-      <!-- other sidebar sections here... -->
-    </div>
+        <div class="sidebar" id="sidebar">
+            <h4 class="text-white text-center">SM System</h4>
+        
+            <a href="#"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a>
+        
+            <div class="section-title">
+                <span class="text-white">User Management</span>
+            </div>
+            <a href="pages/users/index.html"><i class="fas fa-users"></i> <span>Manage Users</span></a>
+            <a href="#"><i class="fas fa-user-tag"></i> <span>Set User Permissions</span></a>
+            <a href="#"><i class="fas fa-history"></i> <span>User Activity Logs</span></a>
+            <a href="#"><i class="fas fa-bell"></i> <span>Telegram Notifications</span></a>
+        
+            <div class="section-title">
+                <span class="text-white">Staff Management</span>
+            </div>
+            <a href="#"><i class="fas fa-user-cog"></i> <span>Manage Staff</span></a>
+            <a href="#"><i class="fas fa-id-card"></i> <span>Staff Profiles</span></a>
+            <a href="#"><i class="fas fa-qrcode"></i> <span>QR Attendance</span></a>
+            <a href="#"><i class="fas fa-birthday-cake"></i> <span>Birthday Notifications</span></a>
+            <a href="#"><i class="fas fa-clipboard-check"></i> <span>Generate Reports</span></a>
+        
+            <div class="section-title">
+                <span class="text-white">Curriculum Management</span>
+            </div>
+            <a href="#"><i class="fas fa-graduation-cap"></i> <span>Manage Classes</span></a>
+            <a href="#"><i class="fas fa-book-open"></i> <span>Set Subjects</span></a>
+            <a href="#"><i class="fas fa-calendar-alt"></i> <span>Class Schedules</span></a>
+            <a href="#"><i class="fas fa-cogs"></i> <span>Set Fees</span></a>
+        
+            <div class="section-title">
+                <span class="text-white">Score System</span>
+            </div>
+            <a href="#"><i class="fas fa-chart-line"></i> <span>Track Scores</span></a>
+            <a href="#"><i class="fas fa-table"></i> <span>Score Tables</span></a>
+            <a href="#"><i class="fas fa-excel"></i> <span>Export Scores to Excel</span></a>
+            <a href="#"><i class="fas fa-cogs"></i> <span>Score Settings</span></a>
+        
+            <div class="section-title">
+                <span class="text-white">Student Management</span>
+            </div>
+            <a href="#"><i class="fas fa-user-graduate"></i> <span>Student Profiles</span></a>
+            <a href="#"><i class="fas fa-check-circle"></i> <span>Student Payment Status</span></a>
+            <a href="#"><i class="fas fa-calendar-check"></i> <span>Payment Reminders</span></a>
+            <a href="#"><i class="fas fa-users"></i> <span>Batch Management</span></a>
+        
+            <div class="section-title">
+                <span class="text-white">Inventory Management</span>
+            </div>
+            <a href="#"><i class="fas fa-cogs"></i> <span>Manage Stock</span></a>
+            <a href="#"><i class="fas fa-box"></i> <span>Products List</span></a>
+            <a href="#"><i class="fas fa-clipboard-list"></i> <span>Inventory Reports</span></a>
+            <a href="#"><i class="fas fa-tags"></i> <span>Product Barcode</span></a>
+        
+            <div class="section-title">
+                <span class="text-white">Reports</span>
+            </div>
+            <a href="#"><i class="fas fa-file-alt"></i> <span>Generate Reports</span></a>
+            <a href="#"><i class="fas fa-download"></i> <span>Download Reports</span></a>
+        
+            <div class="section-title">
+                <span class="text-white">System Settings</span>
+            </div>
+            <a href="#"><i class="fas fa-cogs"></i> <span>General Settings</span></a>
+            <a href="#"><i class="fas fa-lock"></i> <span>Security Settings</span></a>
+            <a href="#"><i class="fas fa-users-cog"></i> <span>Role Management</span></a>
+            <a href="#"><i class="fas fa-database"></i> <span>Backup & Restore</span></a>
+        
+            <hr>
+            <a href="#"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a>
+        </div>
 
     <div class="content flex-grow-1">
       <nav class="navbar navbar-expand-lg shadow-sm p-3">
@@ -133,6 +189,7 @@
 
       <div class="container mt-4">
         <div class="d-flex justify-content-between align-items-center mb-3">
+             <a href="../../index.html" class="btn btn-danger"><i class="fa-solid fa-reply"></i> </i>Back</a>
           <h5>User List</h5>
           <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addUserModal">
             <i class="fas fa-user-plus"></i> Add New User
